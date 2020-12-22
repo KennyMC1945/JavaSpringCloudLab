@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: web
+  cloud:
+    stream:
+      bindings:
+        testChannelClass:
+          destination: testChannel
+          group: testChannelQueue
+server:
+  port: 8181
+
+
+
+
