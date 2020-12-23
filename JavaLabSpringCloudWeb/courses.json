@@ -1,1 +1,13 @@
-[{"title":"Be better with your IDE!","author":"Adam Dantiego","id":0,"tags":["Programming","Efficiency"],"lessons":["Lesson 1. Use shortkeys","Lesson 2. Be efficient"]},{"title":"How to create stunning visuals","author":"Santiago Delevin","id":1,"tags":["Cinema","Visual Production","Post-processing"],"lessons":["Lesson 1. Use Adobe Premier","Lesson 2. Use Adobe After Effects","Lesson 3. Try things"]}]
+[{
+    "title": "Be better with your IDE!",
+    "author": "Adam Dantiego",
+    "id": 0,
+    "tags": ["Programming", "Efficiency"],
+    "lessons": ["Lesson 1. Use shortkeys", "Lesson 2. Be efficient"]
+}, {
+    "title": "How to create stunning visuals",
+    "author": "Santiago Delevin",
+    "id": 1,
+    "tags": ["Cinema", "Visual Production", "Post-processing"],
+    "lessons": ["Lesson 1. Use Adobe Premier", "Lesson 2. Use Adobe After Effects", "Lesson 3. Try things"]
+}]

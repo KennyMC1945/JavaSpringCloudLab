@@ -5,6 +5,7 @@ import com.example.JavaLabSpringCloudWeb.repository.FileRepository;
 import com.example.JavaLabSpringCloudWeb.repository.IRepository;
 import com.example.JavaLabSpringCloudWeb.service.CourseService;
 import com.example.JavaLabSpringCloudWeb.service.FileCourseService;
+import com.example.JavaLabSpringCloudWeb.service.MongoCourseService;
 import com.example.JavaLabSpringCloudWeb.source.Sender;
 import org.springframework.amqp.core.DirectExchange;
 import org.springframework.amqp.core.Queue;
@@ -17,7 +18,7 @@ import java.io.IOException;
 public class Config {
     @Bean
     public CourseService getAccService() throws IOException{
-        return new FileCourseService();
+        return new MongoCourseService();
     }
     @Bean
     public IRepository getRepository() {

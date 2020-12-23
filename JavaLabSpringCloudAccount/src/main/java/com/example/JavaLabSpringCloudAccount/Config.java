@@ -5,6 +5,7 @@ import com.example.JavaLabSpringCloudAccount.repository.FileRepository;
 import com.example.JavaLabSpringCloudAccount.repository.IRepository;
 import com.example.JavaLabSpringCloudAccount.service.AccountService;
 import com.example.JavaLabSpringCloudAccount.service.FileAccountService;
+import com.example.JavaLabSpringCloudAccount.service.MongoAccountService;
 import com.example.JavaLabSpringCloudAccount.source.Receiver;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
@@ -20,7 +21,7 @@ import java.io.IOException;
 public class Config {
     @Bean
     public AccountService getAccService() throws IOException{
-        return new FileAccountService();
+        return new MongoAccountService();
     }
     @Bean
     public IRepository getRepository() {

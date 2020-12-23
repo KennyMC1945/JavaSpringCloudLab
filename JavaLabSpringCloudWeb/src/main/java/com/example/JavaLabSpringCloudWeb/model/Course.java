@@ -1,15 +1,23 @@
 package com.example.JavaLabSpringCloudWeb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
-
+@Document(collection = "courses")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Course {
+
+    @Field("title")
     private String title;
+    @Field("author")
     private String author;
+    @Field("id")
     private int id;
+    @Field("tags")
     private List<String> tags;
+    @Field("lessons")
     private List<String> lessons;
 
     public String getTitle() {

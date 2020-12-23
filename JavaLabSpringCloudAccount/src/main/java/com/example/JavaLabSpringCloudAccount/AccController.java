@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +27,7 @@ public class AccController {
 
     @GetMapping("/test")
     public String testFunc(){
-        return test;
+        return "test";
     }
     @GetMapping("/user/{id}")
     public ResponseEntity<String> setName(@PathVariable int id) {

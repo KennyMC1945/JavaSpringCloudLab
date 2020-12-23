@@ -1,16 +1,22 @@
 package com.example.JavaLabSpringCloudAccount.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+@Document(collection = "accounts")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Account {
+    @Field("name")
     private String name;
+    @Field("id")
     private int id;
+    @Field("subscriptions")
     private List<Integer> subscriptions;
+    @Field("code")
     private int code;
 
     public int getCode() {
