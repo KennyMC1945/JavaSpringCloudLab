@@ -1,0 +1,13 @@
+server:
+  port: 7070
+
+spring:
+  application:
+    name: accounts
+
+spring.cloud.config.discovery.enabled: true
+spring.cloud.config.discovery.serviceId: config-server
+#
+#test:
+#  variable: local
+

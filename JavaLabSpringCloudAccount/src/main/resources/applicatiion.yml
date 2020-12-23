@@ -1,8 +1,0 @@
-server:
-  port: 7070
-
-spring:
-  application:
-    name: hello
-
-

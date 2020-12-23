@@ -6,6 +6,7 @@ import com.example.JavaLabSpringCloudWeb.service.FileCourseService;
 import com.example.JavaLabSpringCloudWeb.source.Sender;
 import com.example.JavaLabSpringCloudWeb.source.TestChannelSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,11 +16,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@EnableBinding(TestChannelSource.class)
+@RefreshScope
 public class WebController {
-
-    @Autowired
-    public TestChannelSource testChannelSource;
 
     public Integer user_id = null;
 

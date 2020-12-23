@@ -3,18 +3,29 @@ package com.example.JavaLabSpringCloudAccount;
 import com.example.JavaLabSpringCloudAccount.model.Account;
 import com.example.JavaLabSpringCloudAccount.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RefreshScope
 public class AccController {
     private String name = "user";
 
     @Autowired
     public AccountService accountService;
 
+    @Value("${test.variable:dont}")
+    private String test;
 
+    @GetMapping("/test")
+    public String testFunc(){
+        return test;
+    }
     @GetMapping("/user/{id}")
     public ResponseEntity<String> setName(@PathVariable int id) {
         Account user = accountService.getAccount(id);
