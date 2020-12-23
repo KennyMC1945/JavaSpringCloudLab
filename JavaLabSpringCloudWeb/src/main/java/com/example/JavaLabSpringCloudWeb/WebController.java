@@ -2,15 +2,11 @@ package com.example.JavaLabSpringCloudWeb;
 
 import com.example.JavaLabSpringCloudWeb.model.Course;
 import com.example.JavaLabSpringCloudWeb.service.CourseService;
-import com.example.JavaLabSpringCloudWeb.service.FileCourseService;
 import com.example.JavaLabSpringCloudWeb.source.Sender;
-import com.example.JavaLabSpringCloudWeb.source.TestChannelSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
-import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.integration.support.MessageBuilder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,13 +22,6 @@ public class WebController {
 
     @Autowired
     public Sender sender;
-
-    @GetMapping("/")
-    String index(){
-        return "User /set/{name} to change username on host:7171";
-    }
-
-
 
     @GetMapping("/course/{id}")
     public ResponseEntity<String> getCourse(@PathVariable int id) {

@@ -17,20 +17,13 @@ import org.springframework.web.bind.annotation.*;
 @RestController
 @RefreshScope
 public class AccController {
-    private String name = "user";
 
     @Autowired
     public AccountService accountService;
 
-    @Value("${test.variable:dont}")
-    private String test;
 
-    @GetMapping("/test")
-    public String testFunc(){
-        return "test";
-    }
     @GetMapping("/user/{id}")
-    public ResponseEntity<String> setName(@PathVariable int id) {
+    public ResponseEntity<String> getUser(@PathVariable int id) {
         Account user = accountService.getAccount(id);
         if (user == null) return new ResponseEntity<String>("No such user", HttpStatus.OK);
         return new ResponseEntity<String>(user.toString(), HttpStatus.OK);
