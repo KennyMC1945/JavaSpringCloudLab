@@ -24,16 +24,26 @@ public class Receiver {
         System.out.println("Received: "+ in);
     }
     @RabbitListener(queues = "rpc-ex.requests")
-    public boolean login(String in) {
+    public String rpc_requests(String in) {
         if (in.startsWith("login")) {
             String[] params = in.split(" ");
             int userid = Integer.parseInt(params[1]);
             int code = Integer.parseInt(params[2]);
             Account user = accountService.getAccount(userid);
-            if (user == null) return false;
-            return user.getCode() == code;
+            if (user == null) return "false";
+            return "true";
+        } else if (in.startsWith("subscription")) {
+            String[] params = in.split(" ");
+            int userid = Integer.parseInt(params[1]);
+            Account user = accountService.getAccount(userid);
+            if (user == null) return "";
+            String response = "";
+            for (Integer i : user.getSubscriptions()) {
+                response += i + " ";
+            }
+            return response.trim();
         }
-        return false;
+        return null;
     }
 
     @RabbitListener(queues = "rpc-ex.requests")

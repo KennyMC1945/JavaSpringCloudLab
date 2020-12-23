@@ -24,7 +24,7 @@ public class Sender {
     }
 
     public boolean login(int userid, int code) {
-        Boolean response = (Boolean) template.convertSendAndReceive(exchange.getName(),"rpc","login "+userid+" "+code);
+        boolean response = Boolean.parseBoolean((String)template.convertSendAndReceive(exchange.getName(),"rpc","login "+userid+" "+code));
         return response;
     }
 
